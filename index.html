@@ -144,9 +144,7 @@
         </div>
         <!-- About End -->
         
-          
-       
-
+        
 
         <!-- Portfolio Start -->
         <div class="portfolio" id="portfolio">
@@ -176,26 +174,22 @@
                             </div>
                             <div class="portfolio-text">
                                 <h3>Excel Projects</h3>
-                                <a class="btn" href="#" id="popup-btn" >+</a>
+                                
+                                <a class="btn read-more-btn" data-popup="popup1">+</a>
 
-<div class="popup" id="popup">
-    
+                                <div class="popup-overlay" id="popup1">
+                                    <!-- Popup content for button 1 -->
+                                    <div class="close-btn">X</div>
+                                    <div class="popup-content">
+                                      
+                                      <div class="popup-text">
+                                        <p>This are many of my ongoing projects designed to analyze data using Excel. The projects basically covers all the steps involved in analyzing data using Excel. This includes cleaning and preparing data, performing descriptive analysis and creating charts and visualizations for preparing reports.
+                                            The forage KPMG virtual internship project is also included in this project.</p>
+                                          <a href="https://github.com/Kelvin-M-Njoki/excel-projects" target="_blank">View Project</a>
+                                      </div>
+                                    </div>
+                                  </div>
 
-<div class="popup-content">
-  <a href="#" id="popup-close">&times;</a>
-  <div class="popup-images-container">
-    <a href="#" class="popup-prev">&#10094;</a>
-    <div class="popup-images">
-      <img src="img/excel.png" alt="Portfolio image">
-    </div>
-    <a href="#" class="popup-next">&#10095;</a>
-  </div>
-  <p>This are many of my ongoing projects designed to analyze data using Excel. The projects basically covers all the steps involved in analyzing data using Excel. This includes cleaning and preparing data, performing descriptive analysis and creating charts and visualizations for preparing reports.
-The forage KPMG virtual internship project is also included in this project.</p>
-  <a href="https://github.com/Kelvin-M-Njoki/excel-projects" target="_blank">View Project</a>
-
- </div>
-</div>
 
                             </div>
                         </div>
@@ -208,24 +202,23 @@ The forage KPMG virtual internship project is also included in this project.</p>
                             </div>
                             <div class="portfolio-text">
                                 <h3>Udiddit SQL Project</h3>
-                                <a class="btn" href="#" id="popup-btn" >+</a>
+                                <a class="btn read-more-btn" data-popup="popup2" >+</a>
 
-<div class="popup" id="popup">
-   
-<div class="popup-content">
-     <a href="#" id="popup-close">&times;</a>
-  <div class="popup-images-container">
-    <a href="#" class="popup-prev">&#10094;</a>
-    <div class="popup-images">
-      <img src="img/SQL.png" alt="Portfolio image">
-    </div>
-    <a href="#" class="popup-next">&#10095;</a>
-  </div>
-  <p>Udiddit is a social news aggregator, content rating, and discussions website. It allows registered users are able to link to external content or post their own text content about various topics, ranging from common topics such as food to more arcane ones such as coding. Other users can comment on these posts, and each user is allowed to cast a vote about each post, either in an up (like) or down (dislike) direction. </p>
-  <a href="https://github.com/Kelvin-M-Njoki/udiddit-project" target="_blank">View Project</a>
-
- </div>
-</div>
+ <div class="popup-overlay" id="popup2">
+                                  <!-- Popup content for button 2 -->
+                                  <div class="close-btn">X</div>
+                                  <div class="popup-content">
+                                    
+                                    <div class="popup-text">
+                                       <p>Udiddit is a social news aggregator, content rating, and discussions website. It allows registered users are able to link to
+                                         external content or post their own text content about various topics, ranging from common topics such as food to more arcane ones such as coding. 
+                                         Other users can comment on these posts, 
+                                        and each user is allowed to cast a vote about each post, either in an up (like) or down (dislike) direction. </p>
+                                      <a href="https://github.com/Kelvin-M-Njoki/udiddit-project" target="_blank">View Project</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                        
 
                             </div>
                         </div>
@@ -237,20 +230,17 @@ The forage KPMG virtual internship project is also included in this project.</p>
                             </div>
                             <div class="portfolio-text">
                                 <h3>Deforestation SQL Project</h3>
-                                <a class="btn" href="#" id="popup-btn" >+</a>
+                                
+                                <a class="btn read-more-btn" data-popup="popup3">+</a>
 
-<div class="popup" id="popup">
+                                              
+
+<div class="popup-overlay" id="popup3">
     
-
+    <div class="close-btn">X</div> 
 <div class="popup-content">
-  <a href="#" id="popup-close">&times;</a>
-  <div class="popup-images-container">
-    <a href="#" class="popup-prev">&#10094;</a>
-    <div class="popup-images">
-      <img src="img/deforest.png" alt="Portfolio image">
-    </div>
-    <a href="#" class="popup-next">&#10095;</a>
-  </div>
+  
+  
   <p>A project designed to study the trends of deforestation in the world from 1990 to 2016. <br>
 It aims at answering many questions regarding deforestation and the collective actions that countries must take in tackling the problem. The data used in this project is obtained from the world bank, comprising of the world forest area and land area from 1990 to 2016.</p>
   <a href="https://github.com/Kelvin-M-Njoki/deforestation-project" target="_blank">View Project</a>
@@ -261,146 +251,90 @@ It aims at answering many questions regarding deforestation and the collective a
                             </div>
                         </div>
                     </div>
-    <style>
- #popup-close {
-    position: absolute;
-    top: -20px;
-    left: -30px;
-    font-size: 45px;
-    font-weight: bold;
-    color: #0cf117;
-    text-decoration: none;
-    line-height: 1;
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        const readMoreBtns = document.querySelectorAll(".read-more-btn");
+                        const popups = document.querySelectorAll(".popup-overlay");
+                      
+                        readMoreBtns.forEach(function (btn) {
+                          btn.addEventListener("click", function () {
+                            const popupId = this.getAttribute("data-popup");
+                            const popup = document.getElementById(popupId);
+                            popup.style.display = "block";
+                          });
+                        });
+                      
+                        const closeBtns = document.querySelectorAll(".close-btn");
+                      
+                        closeBtns.forEach(function (btn) {
+                          btn.addEventListener("click", function () {
+                            const popup = this.closest(".popup-overlay");
+                            popup.style.display = "none";
+                          });
+                        });
+                      });
+                      
+                      
+                      </script>
 
-        }
-    .popup {
-        width: 450px;
-        height: auto;
-        z-index: 9999;
-        background-color: rgba(22,22,22,0.5); /* complimenting your modal colors */
-        display: none;
-        
-        
-      }
-      
-      .popup-content {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        right: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #f0f00c;
-        padding: 20px;
-        text-align: center;
-        width: 90%;
-        height: 300px;
-        overflow: auto;
-      
-        
-      }
-      
-      .popup-images {
-        max-width: 100%;
-        height: auto;
-      }
-      .popup-images-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-prev,
-.popup-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  cursor: pointer;
-  font-size: 30px; /* change the font size to make the arrows bigger */
-  color:  #0cf117; /* change the color of the arrows to green */
-}
-.popup-prev:active,
-.popup-next:active {
-  color: #0cf117; /* add the same color as the normal state */
-}
-
-.popup-prev {
-  left: 0;
-}
-
-.popup-next {
-  right: 0;
-}
-
-.popup-images {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-    </style>
-    <script>
-
-const popupBtns = document.querySelectorAll('#popup-btn');
-
-popupBtns.forEach(popupBtn => {
-  // Add event listener and code for opening the pop-up here
-
-
-const popup = document.getElementById('popup');
-const popupClose = document.getElementById('popup-close');
-
-popupBtn.addEventListener('click', function(e) {
-  e.preventDefault();
-  popup.style.display = 'block';
-  const btnRect = popupBtn.getBoundingClientRect();
-  popup.style.top = btnRect.bottom + 'px';
-  popup.style.left = btnRect.left + 'px';
-});
-
-popupClose.addEventListener('click', function() {
-  popup.style.display = 'none';
-});
-
-const popupImages = document.querySelectorAll('.popup-images img');
-const popupPrev = document.querySelector('.popup-prev');
-const popupNext = document.querySelector('.popup-next');
-let currentImageIndex = 0;
-
-function showImage(index) {
-  popupImages.forEach(image => image.style.display = 'none');
-  popupImages[index].style.display = 'block';
-}
-
-function showNextImage() {
-  currentImageIndex++;
-  if (currentImageIndex >= popupImages.length) {
-    currentImageIndex = 0;
-  }
-  showImage(currentImageIndex);
-}
-
-function showPrevImage() {
-  currentImageIndex--;
-  if (currentImageIndex < 0) {
-    currentImageIndex = popupImages.length - 1;
-  }
-  showImage(currentImageIndex);
-}
-
-popupPrev.addEventListener('click', showPrevImage);
-popupNext.addEventListener('click', showNextImage);
-showImage(currentImageIndex);
-});
-        </script>
- 
+  
                 </div>
             </div>
         </div>
         <!-- Portfolio End -->
-         
+<style>       
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+.popup-content {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff; /* Set default background to white */
+  border: 5px solid green;
+  padding: 20px;
+  color: #000; /* Set text color to black */
+  text-align: center;
+  overflow-y: auto;
+  max-height: 80%;
+  transition: background 0.3s; /* Add transition effect */
+}
 
+.popup-content a {
+    color: #0d0d0d;
+    font-size: 24px;
+    font-weight: bold;
+}
+.popup-content a:hover{
+    color: #0cf117;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 50%;
+    font-size: 35px;
+    font-weight: bold;
+    color: #0cf117;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+.popup-text {
+  margin-bottom: 20px;
+}
+</style>  
+       
+
+
+       
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s" id="footer">
             <div class="container-fluid">
